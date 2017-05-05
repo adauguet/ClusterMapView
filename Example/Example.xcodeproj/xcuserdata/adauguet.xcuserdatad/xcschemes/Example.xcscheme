@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BBDE62FE1EBB8A5100885304"
-               BuildableName = "ClusterMapView.framework"
-               BlueprintName = "ClusterMapView"
-               ReferencedContainer = "container:ClusterMapView.xcodeproj">
+               BlueprintIdentifier = "BBDE63361EBB8FFB00885304"
+               BuildableName = "Example.app"
+               BlueprintName = "Example"
+               ReferencedContainer = "container:Example.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,20 +32,30 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BBDE63071EBB8A5100885304"
-               BuildableName = "ClusterMapViewTests.xctest"
-               BlueprintName = "ClusterMapViewTests"
-               ReferencedContainer = "container:ClusterMapView.xcodeproj">
+               BlueprintIdentifier = "BBDE634A1EBB8FFB00885304"
+               BuildableName = "ExampleTests.xctest"
+               BlueprintName = "ExampleTests"
+               ReferencedContainer = "container:Example.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BBDE63551EBB8FFB00885304"
+               BuildableName = "ExampleUITests.xctest"
+               BlueprintName = "ExampleUITests"
+               ReferencedContainer = "container:Example.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BBDE62FE1EBB8A5100885304"
-            BuildableName = "ClusterMapView.framework"
-            BlueprintName = "ClusterMapView"
-            ReferencedContainer = "container:ClusterMapView.xcodeproj">
+            BlueprintIdentifier = "BBDE63361EBB8FFB00885304"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -61,15 +71,23 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BBDE62FE1EBB8A5100885304"
-            BuildableName = "ClusterMapView.framework"
-            BlueprintName = "ClusterMapView"
-            ReferencedContainer = "container:ClusterMapView.xcodeproj">
+            BlueprintIdentifier = "BBDE63361EBB8FFB00885304"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "OS_ACTIVITY_MODE"
+            value = "disable"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -79,15 +97,16 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <MacroExpansion>
+      <BuildableProductRunnable
+         runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BBDE62FE1EBB8A5100885304"
-            BuildableName = "ClusterMapView.framework"
-            BlueprintName = "ClusterMapView"
-            ReferencedContainer = "container:ClusterMapView.xcodeproj">
+            BlueprintIdentifier = "BBDE63361EBB8FFB00885304"
+            BuildableName = "Example.app"
+            BlueprintName = "Example"
+            ReferencedContainer = "container:Example.xcodeproj">
          </BuildableReference>
-      </MacroExpansion>
+      </BuildableProductRunnable>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

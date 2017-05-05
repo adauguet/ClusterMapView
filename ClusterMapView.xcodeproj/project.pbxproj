@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB75A8CC1EBC5F3F000366F5 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A8C51EBC5F3F000366F5 /* MapView.swift */; };
+		BB75A8CD1EBC5F3F000366F5 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A8C61EBC5F3F000366F5 /* Node.swift */; };
+		BB75A8CE1EBC5F3F000366F5 /* Marker.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A8C71EBC5F3F000366F5 /* Marker.swift */; };
+		BB75A8CF1EBC5F3F000366F5 /* SplitAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A8C81EBC5F3F000366F5 /* SplitAnimation.swift */; };
+		BB75A8D01EBC5F3F000366F5 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A8C91EBC5F3F000366F5 /* Extensions.swift */; };
+		BB75A8D11EBC5F3F000366F5 /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A8CA1EBC5F3F000366F5 /* Animation.swift */; };
+		BB75A8D21EBC5F3F000366F5 /* GroupAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB75A8CB1EBC5F3F000366F5 /* GroupAnimation.swift */; };
 		BBDE63091EBB8A5100885304 /* ClusterMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDE62FF1EBB8A5100885304 /* ClusterMapView.framework */; };
 		BBDE630E1EBB8A5100885304 /* ClusterMapViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE630D1EBB8A5100885304 /* ClusterMapViewTests.swift */; };
 		BBDE63101EBB8A5100885304 /* ClusterMapView.h in Headers */ = {isa = PBXBuildFile; fileRef = BBDE63021EBB8A5100885304 /* ClusterMapView.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -23,6 +30,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB75A8C51EBC5F3F000366F5 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		BB75A8C61EBC5F3F000366F5 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		BB75A8C71EBC5F3F000366F5 /* Marker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Marker.swift; sourceTree = "<group>"; };
+		BB75A8C81EBC5F3F000366F5 /* SplitAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplitAnimation.swift; sourceTree = "<group>"; };
+		BB75A8C91EBC5F3F000366F5 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		BB75A8CA1EBC5F3F000366F5 /* Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
+		BB75A8CB1EBC5F3F000366F5 /* GroupAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroupAnimation.swift; sourceTree = "<group>"; };
 		BBDE62FF1EBB8A5100885304 /* ClusterMapView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ClusterMapView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDE63021EBB8A5100885304 /* ClusterMapView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ClusterMapView.h; sourceTree = "<group>"; };
 		BBDE63031EBB8A5100885304 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -71,6 +85,11 @@
 		BBDE63011EBB8A5100885304 /* ClusterMapView */ = {
 			isa = PBXGroup;
 			children = (
+				BB75A8C51EBC5F3F000366F5 /* MapView.swift */,
+				BB75A8C61EBC5F3F000366F5 /* Node.swift */,
+				BB75A8C71EBC5F3F000366F5 /* Marker.swift */,
+				BBDE63271EBB8BEC00885304 /* Animations */,
+				BB75A8C91EBC5F3F000366F5 /* Extensions.swift */,
 				BBDE63021EBB8A5100885304 /* ClusterMapView.h */,
 				BBDE63031EBB8A5100885304 /* Info.plist */,
 			);
@@ -84,6 +103,16 @@
 				BBDE630F1EBB8A5100885304 /* Info.plist */,
 			);
 			path = ClusterMapViewTests;
+			sourceTree = "<group>";
+		};
+		BBDE63271EBB8BEC00885304 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				BB75A8CA1EBC5F3F000366F5 /* Animation.swift */,
+				BB75A8C81EBC5F3F000366F5 /* SplitAnimation.swift */,
+				BB75A8CB1EBC5F3F000366F5 /* GroupAnimation.swift */,
+			);
+			name = Animations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +178,7 @@
 					BBDE62FE1EBB8A5100885304 = {
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = AGP77XRAQE;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					BBDE63071EBB8A5100885304 = {
@@ -198,6 +228,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB75A8D01EBC5F3F000366F5 /* Extensions.swift in Sources */,
+				BB75A8CC1EBC5F3F000366F5 /* MapView.swift in Sources */,
+				BB75A8CD1EBC5F3F000366F5 /* Node.swift in Sources */,
+				BB75A8CE1EBC5F3F000366F5 /* Marker.swift in Sources */,
+				BB75A8D21EBC5F3F000366F5 /* GroupAnimation.swift in Sources */,
+				BB75A8D11EBC5F3F000366F5 /* Animation.swift in Sources */,
+				BB75A8CF1EBC5F3F000366F5 /* SplitAnimation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +361,7 @@
 		BBDE63141EBB8A5100885304 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AGP77XRAQE;
@@ -336,6 +374,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.adauguet.ClusterMapView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -343,6 +382,7 @@
 		BBDE63151EBB8A5100885304 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = AGP77XRAQE;
@@ -362,6 +402,7 @@
 		BBDE63171EBB8A5100885304 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = AGP77XRAQE;
 				INFOPLIST_FILE = ClusterMapViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -374,6 +415,7 @@
 		BBDE63181EBB8A5100885304 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = AGP77XRAQE;
 				INFOPLIST_FILE = ClusterMapViewTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -402,6 +444,7 @@
 				BBDE63151EBB8A5100885304 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BBDE63161EBB8A5100885304 /* Build configuration list for PBXNativeTarget "ClusterMapViewTests" */ = {
 			isa = XCConfigurationList;
@@ -410,6 +453,7 @@
 				BBDE63181EBB8A5100885304 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
