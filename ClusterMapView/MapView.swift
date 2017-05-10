@@ -1,7 +1,7 @@
 import MapKit
 
 public protocol ClusterMapViewDelegate: MKMapViewDelegate {
-    var numberOfVisibleClusters: Int { get }
+    var numberOfVisibleNodes: Int { get }
     
     var animationDuration: Double { get }
     
@@ -15,7 +15,7 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
     private var root: Node?
     private var depth: Int?
     private var isAnimating = false
-    private var shouldComputeClusters = false
+    private var shouldComputeNodes = false
     
     public var clusterMapViewDelegate: ClusterMapViewDelegate? {
         didSet {
@@ -45,7 +45,7 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
             deselectAnnotation(annotation, animated: true)
         }
         if isAnimating {
-            shouldComputeClusters = true
+            shouldComputeNodes = true
         } else {
             isAnimating = true
             displayAnnotations(animated: true)
@@ -72,7 +72,7 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
         let mapRect = animated ? visibleMapRect : MKMapRectNull
         
         // Get the maximum number of annotations.
-        let maximum: Int = clusterMapViewDelegate?.numberOfVisibleClusters ?? 32
+        let maximum: Int = clusterMapViewDelegate?.numberOfVisibleNodes ?? 32
         
         // Compute desired depth with corresponding inside/outside annotations.
         let (depth, newInsideNodes, newOutsideNodes) = root.depthAndNodes(mapRect: mapRect, maximum: maximum)
