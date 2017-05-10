@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double ClusterMapViewVersionNumber;
 FOUNDATION_EXPORT const unsigned char ClusterMapViewVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <ClusterMapView/PublicHeader.h>
-
-

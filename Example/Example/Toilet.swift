@@ -1,11 +1,11 @@
 import Foundation
 import MapKit
 
-public class Toilet: NSObject, MKAnnotation {
+public final class Toilet: NSObject, MKAnnotation {
     var name: String
     public var coordinate: CLLocationCoordinate2D
     
-    public init?(json: [String : Any]) {
+    public required init?(json: [String : Any]) {
         guard
             let name = json["name"] as? String,
             let coordinate = json["coordinates"] as? [String : Any],
@@ -15,3 +15,5 @@ public class Toilet: NSObject, MKAnnotation {
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }
+
+extension Toilet: JSONInstantiable {}
