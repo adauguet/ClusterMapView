@@ -1,5 +1,5 @@
 # ClusterMapView
-An `MKMapView` subclass with clustering. Greatly inspired by `ADClusterMapView`.
+An `MKMapView` subclass with clustering. Inspired by `ADClusterMapView`.
 
 ## Features
 - Swift implementation
@@ -33,12 +33,12 @@ end
 ### ClusterMapViewDelegate
 `ClusterMapView` has a `clusterMapViewDelegate` delegate property that you can use to get notified and to customize clustering parameters. `ClusterMapViewDelegate` is a subclass of `MKMapViewDelegate`.
 
-Customise the maximum number of nodes that you want to see on your map:
+Customize the maximum number of nodes that you want to see on your map:
 ```swift
 var numberOfVisibleNodes: Int { get } // default 32
 ```
 
-Customise the animation duration:
+Customize the animation duration:
 ```swift
 var animationDuration: Double { get } // default 0.4
 ```
