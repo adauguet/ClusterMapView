@@ -35,7 +35,7 @@ public class Node: NSObject, MKAnnotation {
         case .leaf(_, let annotation):
             return [annotation]
         case .root(let children), .node(_, let children):
-            return children.map { $0.annotations }
+            return children.flatMap { $0.annotations }
         }
     }
     

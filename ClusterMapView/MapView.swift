@@ -5,9 +5,9 @@ public protocol ClusterMapViewDelegate: MKMapViewDelegate {
     
     var animationDuration: Double { get }
     
-    func mapViewDidFinishClustering(_ mapView: MKMapView)
+    func mapViewDidFinishClustering(_ mapView: ClusterMapView)
     
-    func mapViewDidFinishAnimating(_ mapView: MKMapView)
+    func mapViewDidFinishAnimating(_ mapView: ClusterMapView)
 }
 
 public extension ClusterMapViewDelegate {
@@ -137,8 +137,6 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
                 }
             }
             
-            print("newInsideNodesSet.count: \(newInsideNodesSet.count)")
-            
             removeAnnotations(outsideNodes)
             addAnnotations(newOutsideNodes)
         } else { // regroup nodes
@@ -163,8 +161,6 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
                 }
             }
             
-            print("insideNodesSet.count: \(insideNodesSet.count)")
-            
             removeAnnotations(outsideNodes)
             addAnnotations(newOutsideNodes)
         }
@@ -178,7 +174,7 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
             
             // Execute animations (change coordinates)
             animations.forEach { $0.execute() }
-        }, completion: { (_) in
+        }) { _ in
             
             // Clean animations (manipulate annotations coordinates, perform add/remove).
             animations.forEach { $0.clean() }
@@ -186,8 +182,13 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
             // Finally, update the mapView's current depth.
             self.depth = depth
             
-            // notify delegate
-            self.clusterMapViewDelegate?.mapViewDidFinishAnimating(self)
-        })
+            if self.shouldComputeNodes {
+                self.displayAnnotations(animated: animated)
+            } else {
+                // notify delegate
+                self.isAnimating = false
+                self.clusterMapViewDelegate?.mapViewDidFinishAnimating(self)
+            }
+        }
     }
 }

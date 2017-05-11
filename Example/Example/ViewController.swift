@@ -36,11 +36,11 @@ class ViewController: UIViewController {
 
 extension ViewController: ClusterMapViewDelegate {
     
-    func mapViewDidFinishClustering(_ mapView: MKMapView) {
+    func mapViewDidFinishClustering(_ mapView: ClusterMapView) {
         print(#function)
     }
     
-    func mapViewDidFinishAnimating(_ mapView: MKMapView) {
+    func mapViewDidFinishAnimating(_ mapView: ClusterMapView) {
         print(#function)
     }
 }
