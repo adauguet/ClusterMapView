@@ -10,6 +10,21 @@ public protocol ClusterMapViewDelegate: MKMapViewDelegate {
     func mapViewDidFinishAnimating(_ mapView: MKMapView)
 }
 
+public extension ClusterMapViewDelegate {
+    
+    var numberOfVisibleNodes: Int {
+        return 32
+    }
+    
+    var animationDuration: Double {
+        return 0.4
+    }
+    
+    func mapViewDidFinishClustering(_ mapView: MKMapView) {}
+    
+    func mapViewDidFinishAnimating(_ mapView: MKMapView) {}
+}
+
 public class ClusterMapView: MKMapView, MKMapViewDelegate {
     
     private var root: Node?

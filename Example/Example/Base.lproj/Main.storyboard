@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="xla-kJ-Xux">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,35 +10,37 @@
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="onq-hM-K2l">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xla-kJ-Xux" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="BJI-fm-4eQ"/>
+                        <viewControllerLayoutGuide type="bottom" id="Rvl-u2-9VK"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="2Ri-K8-8vh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="PoG-0v-VER" customClass="ClusterMapView">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Qob-cG-GGu" customClass="ClusterMapView" customModule="ClusterMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </mapView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="PoG-0v-VER" secondAttribute="trailing" id="XVm-D9-cfh"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="PoG-0v-VER" secondAttribute="bottom" id="jXf-Y1-dDY"/>
-                            <constraint firstItem="PoG-0v-VER" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="k5r-cl-JEA"/>
-                            <constraint firstItem="PoG-0v-VER" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="tak-3A-5iD"/>
+                            <constraint firstAttribute="trailing" secondItem="Qob-cG-GGu" secondAttribute="trailing" id="Fgq-gx-Sfa"/>
+                            <constraint firstItem="Qob-cG-GGu" firstAttribute="top" secondItem="2Ri-K8-8vh" secondAttribute="top" id="ILb-YC-Av2"/>
+                            <constraint firstItem="Qob-cG-GGu" firstAttribute="leading" secondItem="2Ri-K8-8vh" secondAttribute="leading" id="Sa8-il-U8x"/>
+                            <constraint firstAttribute="bottom" secondItem="Qob-cG-GGu" secondAttribute="bottom" id="ZPa-7X-GTg"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <connections>
-                        <outlet property="mapView" destination="PoG-0v-VER" id="f9y-fn-Qfb"/>
+                        <outlet property="mapView" destination="Qob-cG-GGu" id="q6D-1C-YuI"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rAu-2F-PSe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-472" y="-17"/>
         </scene>
     </scenes>
 </document>

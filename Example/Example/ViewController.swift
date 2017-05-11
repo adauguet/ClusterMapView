@@ -29,9 +29,18 @@ class ViewController: UIViewController {
         let data = try! Data(contentsOf: url)
         let json = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [[String : Any]]
         let streetlights = Streetlight.foo(json: json)
-        mapView.delegate = self
+        mapView.clusterMapViewDelegate = self
         mapView.setAnnotations(streetlights)
     }
 }
 
-extension ViewController: MKMapViewDelegate {}
+extension ViewController: ClusterMapViewDelegate {
+    
+    func mapViewDidFinishClustering(_ mapView: MKMapView) {
+        print(#function)
+    }
+    
+    func mapViewDidFinishAnimating(_ mapView: MKMapView) {
+        print(#function)
+    }
+}

@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BB75A8D41EBC5F9F000366F5 /* ClusterMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB75A8D31EBC5F9F000366F5 /* ClusterMapView.framework */; };
-		BB75A8D51EBC5F9F000366F5 /* ClusterMapView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BB75A8D31EBC5F9F000366F5 /* ClusterMapView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BB9C9AAA1EC3B111009CC6A3 /* Toilet.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C9AA91EC3B111009CC6A3 /* Toilet.swift */; };
 		BB9C9AAC1EC3B126009CC6A3 /* Streetlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C9AAB1EC3B126009CC6A3 /* Streetlight.swift */; };
 		BB9C9AAE1EC3B1F3009CC6A3 /* JSONInstantiable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB9C9AAD1EC3B1F3009CC6A3 /* JSONInstantiable.swift */; };
 		BB9C9AB01EC3B32A009CC6A3 /* Toilets.json in Resources */ = {isa = PBXBuildFile; fileRef = BB9C9AAF1EC3B32A009CC6A3 /* Toilets.json */; };
+		BBC9627D1EC427E5006513B5 /* ClusterMapView.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBC9627C1EC427E5006513B5 /* ClusterMapView.framework */; };
+		BBC9627E1EC427E5006513B5 /* ClusterMapView.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BBC9627C1EC427E5006513B5 /* ClusterMapView.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BBDE633B1EBB8FFB00885304 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE633A1EBB8FFB00885304 /* AppDelegate.swift */; };
 		BBDE633D1EBB8FFB00885304 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBDE633C1EBB8FFB00885304 /* ViewController.swift */; };
 		BBDE63401EBB8FFB00885304 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BBDE633E1EBB8FFB00885304 /* Main.storyboard */; };
@@ -47,7 +47,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BB75A8D51EBC5F9F000366F5 /* ClusterMapView.framework in Embed Frameworks */,
+				BBC9627E1EC427E5006513B5 /* ClusterMapView.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,11 +55,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BB75A8D31EBC5F9F000366F5 /* ClusterMapView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ClusterMapView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB9C9AA91EC3B111009CC6A3 /* Toilet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toilet.swift; sourceTree = "<group>"; };
 		BB9C9AAB1EC3B126009CC6A3 /* Streetlight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Streetlight.swift; sourceTree = "<group>"; };
 		BB9C9AAD1EC3B1F3009CC6A3 /* JSONInstantiable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONInstantiable.swift; sourceTree = "<group>"; };
 		BB9C9AAF1EC3B32A009CC6A3 /* Toilets.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Toilets.json; sourceTree = "<group>"; };
+		BBC9627C1EC427E5006513B5 /* ClusterMapView.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ClusterMapView.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDE63371EBB8FFB00885304 /* Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BBDE633A1EBB8FFB00885304 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BBDE633C1EBB8FFB00885304 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,7 +81,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB75A8D41EBC5F9F000366F5 /* ClusterMapView.framework in Frameworks */,
+				BBC9627D1EC427E5006513B5 /* ClusterMapView.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,7 +132,7 @@
 		BBDE632E1EBB8FFA00885304 = {
 			isa = PBXGroup;
 			children = (
-				BB75A8D31EBC5F9F000366F5 /* ClusterMapView.framework */,
+				BBC9627C1EC427E5006513B5 /* ClusterMapView.framework */,
 				BBDE63391EBB8FFB00885304 /* Example */,
 				BBDE634E1EBB8FFB00885304 /* ExampleTests */,
 				BBDE63591EBB8FFB00885304 /* ExampleUITests */,
