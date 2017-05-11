@@ -29,12 +29,18 @@ class ViewController: UIViewController {
         let data = try! Data(contentsOf: url)
         let json = try! JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [[String : Any]]
         let streetlights = Streetlight.foo(json: json)
-        mapView.clusterMapViewDelegate = self
+        mapView.delegate = self
         mapView.setAnnotations(streetlights)
     }
 }
 
-extension ViewController: ClusterMapViewDelegate {
+extension ViewController: MKMapViewDelegate {
+    
+    func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+        if let mapView = mapView as? ClusterMapView {
+            mapView.updateNodes(animated: animated)
+        }
+    }
     
     func mapViewDidFinishClustering(_ mapView: ClusterMapView) {
         print(#function)
@@ -42,5 +48,27 @@ extension ViewController: ClusterMapViewDelegate {
     
     func mapViewDidFinishAnimating(_ mapView: ClusterMapView) {
         print(#function)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let node = annotation as? Node {
+            var pin: MKPinAnnotationView!
+            if let dequeued = mapView.dequeueReusableAnnotationView(withIdentifier: "pin") as? MKPinAnnotationView {
+                pin = dequeued
+                pin.annotation = node
+            } else {
+                pin = MKPinAnnotationView(annotation: node, reuseIdentifier: "pin")
+            }
+            switch node.type {
+            case .leaf:
+                pin.pinTintColor = .green
+            case .node:
+                pin.pinTintColor = .blue
+            case .root:
+                pin.pinTintColor = .red
+            }
+            return pin
+        }
+        return nil
     }
 }

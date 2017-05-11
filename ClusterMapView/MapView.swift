@@ -1,17 +1,6 @@
 import MapKit
 
-public protocol ClusterMapViewDelegate: MKMapViewDelegate {
-    var numberOfVisibleNodes: Int { get }
-    
-    var animationDuration: Double { get }
-    
-    func mapViewDidFinishClustering(_ mapView: ClusterMapView)
-    
-    func mapViewDidFinishAnimating(_ mapView: ClusterMapView)
-}
-
-public extension ClusterMapViewDelegate {
-    
+public extension MKMapViewDelegate {
     var numberOfVisibleNodes: Int {
         return 32
     }
@@ -20,23 +9,17 @@ public extension ClusterMapViewDelegate {
         return 0.4
     }
     
-    func mapViewDidFinishClustering(_ mapView: MKMapView) {}
+    func mapViewDidFinishClustering(_ mapView: ClusterMapView) {}
     
-    func mapViewDidFinishAnimating(_ mapView: MKMapView) {}
+    func mapViewDidFinishAnimating(_ mapView: ClusterMapView) {}
 }
 
-public class ClusterMapView: MKMapView, MKMapViewDelegate {
+public class ClusterMapView: MKMapView {
     
     private var root: Node?
     private var depth: Int?
     private var isAnimating = false
     private var shouldComputeNodes = false
-    
-    public var clusterMapViewDelegate: ClusterMapViewDelegate? {
-        didSet {
-            self.delegate = self
-        }
-    }
     
     private func sortedNodes(mapRect: MKMapRect) -> (insideNodes: [Node], outsideNodes: [Node]) {
         var insideNodes = [Node]()
@@ -55,23 +38,21 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
     
     // MARK: - MKMapViewDelegate
     
-    public func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-        for annotation in selectedAnnotations {
-            deselectAnnotation(annotation, animated: true)
+    public func updateNodes(animated: Bool) {
+        selectedAnnotations.forEach {
+            deselectAnnotation($0, animated: true)
         }
         if isAnimating {
             shouldComputeNodes = true
         } else {
             isAnimating = true
             displayAnnotations(animated: true)
-            isAnimating = false
         }
-        clusterMapViewDelegate?.mapView?(mapView, regionDidChangeAnimated: animated)
     }
     
     public func setAnnotations(_ annotations: [MKAnnotation]) {
         root = Node(annotations: annotations)
-        clusterMapViewDelegate?.mapViewDidFinishClustering(self)
+        delegate?.mapViewDidFinishClustering(self)
         displayAnnotations(animated: true)
     }
     
@@ -87,7 +68,7 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
         let mapRect = animated ? visibleMapRect : MKMapRectNull
         
         // Get the maximum number of annotations.
-        let maximum: Int = clusterMapViewDelegate?.numberOfVisibleNodes ?? 32
+        let maximum: Int = delegate?.numberOfVisibleNodes ?? 32
         
         // Compute desired depth with corresponding inside/outside annotations.
         let (depth, newInsideNodes, newOutsideNodes) = root.depthAndNodes(mapRect: mapRect, maximum: maximum)
@@ -100,6 +81,9 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
             
             // Set actual depth
             self.depth = depth
+            
+            isAnimating = false
+            
             return
         }
         
@@ -109,7 +93,10 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
         // If the desired depth is superior to the actual depth, nodes are going to divide.
         // If the desired depth is inferior to the actual depth, nodes are going to regroup.
         var animations: [Animation] = []
-        if depth == actualDepth { return }
+        if depth == actualDepth {
+            isAnimating = false
+            return
+        }
         
         // get inside/outside nodes
         // an inside node can be outside the visible map rect if its map rect intersects
@@ -170,7 +157,7 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
         
         // Perform animations.
         // NOTE: DO NOT use add/remove annotations methods inside an animation, as an MKMapView is not really adding/removing them but setting their coordinates to an invalid (outside visibleMapRect) location. Using those methods within an animation could cause unexpected behavior.
-        UIView.animate(withDuration: clusterMapViewDelegate?.animationDuration ?? 0.4, animations: {
+        UIView.animate(withDuration: delegate?.animationDuration ?? 0.4, animations: {
             
             // Execute animations (change coordinates)
             animations.forEach { $0.execute() }
@@ -183,11 +170,12 @@ public class ClusterMapView: MKMapView, MKMapViewDelegate {
             self.depth = depth
             
             if self.shouldComputeNodes {
+                self.shouldComputeNodes = false
                 self.displayAnnotations(animated: animated)
             } else {
                 // notify delegate
                 self.isAnimating = false
-                self.clusterMapViewDelegate?.mapViewDidFinishAnimating(self)
+                self.delegate?.mapViewDidFinishAnimating(self)
             }
         }
     }
