@@ -30,6 +30,15 @@ public class Node: NSObject, MKAnnotation {
         }
     }
     
+    public var annotations: [MKAnnotation] {
+        switch type {
+        case .leaf(_, let annotation):
+            return [annotation]
+        case .root(let children), .node(_, let children):
+            return children.map { $0.annotations }
+        }
+    }
+    
     public convenience init(annotations: [MKAnnotation]) {
         let markers = annotations.map { Marker(annotation: $0) }
         self.init(markers: markers)
