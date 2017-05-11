@@ -2,10 +2,10 @@
 An `MKMapView` subclass with clustering. Inspired by `ADClusterMapView`.
 
 ## Features
-- Swift implementation
-- Principal Components Analysis algorithm
-- Full tree's depth on the map view
-- Animations
+- [x] Swift implementation
+- [x] Principal Components Analysis algorithm
+- [x] Full tree's depth on the map view
+- [x] Animations
 
 ## Tradeoffs
 - Annotation encapsulation: for performance reasons, each annotation is encapsulated in a `Node` to keep track of its children and parent. The original annotation can be retrieved in the node's `annotation` property.
