@@ -30,8 +30,37 @@ end
 
 2. Add annotations using  `setAnnotations`.
 
-### ClusterMapViewDelegate
-`ClusterMapView` has a `clusterMapViewDelegate` delegate property that you can use to get notified and to customize clustering parameters. `ClusterMapViewDelegate` is a subclass of `MKMapViewDelegate`.
+### Annotation Views
+As annotations are now encapsulated in nodes, you can observe each `Node`'s `type` property to adjust annotation views accordingly.
+
+```swift
+func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+    if let node = annotation as? Node {
+        var pin: MKPinAnnotationView!
+        if let dequeued = mapView.dequeueReusableAnnotationView(withIdentifier: "pin") as? MKPinAnnotationView {
+            pin = dequeued
+            pin.annotation = node
+        } else {
+            pin = MKPinAnnotationView(annotation: node, reuseIdentifier: "pin")
+        }
+        switch node.type {
+        case .leaf:
+            pin.pinTintColor = .green
+        case .node:
+            pin.pinTintColor = .blue
+        case .root:
+            pin.pinTintColor = .red
+        }
+        return pin
+    }
+    return nil
+}
+
+```
+
+### MKMapViewDelegate
+
+`ClusterMapView` adds additional methods on `MKMapViewDelegate`.
 
 Customize the maximum number of nodes that you want to see on your map:
 ```swift
